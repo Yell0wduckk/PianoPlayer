@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadJsonUtil {
-    public static String generatePitch(int note)//根据整数来对应相应的音高
+    public static String generatePitch(int note)//根据整数来对应相应的音高 范围21到108
     {
         String[] notes = { "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B" };
         String n;
@@ -60,7 +60,7 @@ public class ReadJsonUtil {
             // 打印读取的信息以验证结果
             if (notesList != null) {
                 for (Note note : notesList) {
-                    NoteBO tempNoteBO=new NoteBO(note.index,generatePitch(note.pitch),note.startTime,note.endTime,volume);
+                    NoteBO tempNoteBO=new NoteBO(note.index,generatePitch(note.pitch), note.pitch, note.startTime,note.endTime,volume);
                     noteBOList.add(tempNoteBO);
                 }
             } else {

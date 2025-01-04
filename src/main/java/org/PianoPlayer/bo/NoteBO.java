@@ -17,12 +17,15 @@ public class NoteBO extends PlaybackListener {
     private int id;
     /** 音高*/
     private String pitch;
+    private int pitchInt;
     /** 起始时间(ms)*/
     private long startTime;
     /** 持续时间(ms)*/
     private long endTime;
     /** 响度*/
     private float volume;
+    /** 音轨*/
+    private int trackNum;
     /** 播放器*/
     private Player player;
 
@@ -33,16 +36,36 @@ public class NoteBO extends PlaybackListener {
     public void setId(int id){this.id=id;}
     public String getPitch(){return this.pitch;}
     public void setPitch(String pitch){this.pitch = pitch;}
+    public int getPitchInt(){return this.pitchInt;}
+    public void setPitchInt(int pitchInt){this.pitchInt=pitchInt;}
     public long getStartTime(){return this.startTime;}
     public void setStartTime(int startTime){this.startTime=startTime;}
     public long getEndTime(){return this.endTime;}
     public void setEndTime(int endTime){this.endTime=endTime;}
     public float getVolume(){return this.volume;}
     public void setVolume(float v){this.volume=v;}
+    public void setTrackNum(int n){this.trackNum=n;}
+    public int getTrackNum(){return this.trackNum;}
 
-    public NoteBO(int id, String n,long st, long et,float v){
+    public NoteBO(String n){
+        this.pitch=n;
+        String path = ResourceUtil.getResource("pianoKey").getPath() + File.separator;
+        path = path + pitch + ".mp3";
+        is = ResourceUtil.getStream(path);
+        try
+        {
+            player=new Player(is,1);
+        }
+        catch (Exception e)
+        {
+            log.error(e);
+        }
+    }
+
+    public NoteBO(int id, String pitch,int pitchInt,long st, long et,float v){
         this.id = id;
-        this.pitch = n;
+        this.pitch = pitch;
+        this.pitchInt=pitchInt;
         this.startTime = st;
         this.endTime = et;
         this.volume=v;
@@ -86,7 +109,7 @@ public class NoteBO extends PlaybackListener {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        NoteBO noteBO = new NoteBO(1, "C2", 0,100, 1.0f);
+        NoteBO noteBO = new NoteBO(1, "C2",24, 0,100, 1.0f);
         noteBO.play();
         System.out.println(0);
         sleep(1000);

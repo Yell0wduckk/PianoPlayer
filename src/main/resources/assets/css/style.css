@@ -39,38 +39,85 @@
     -icon-paint: #555;
 }
 
-.MAIN{
-    -fx-background-color: #20B2AA;
+.TRACK0{
+    -fx-background-color: rgb(102, 204, 0,0.5);
     -fx-fill-height: 10px;
     -fx-padding: 0;
     -fx-border-width: 0;
     -fx-label-padding: 0;
     /*-fx-background-radius: 0;*/
     -fx-border-radius: 0;
-
 }
 
-.ACCOMPANIMENTS{
-    -fx-background-color: rgb(147, 143, 234,.5);
+.TRACK1{
+    -fx-background-color: rgb(147, 143, 234,0.5);
     -fx-fill-height: 10px;
     -fx-padding: 0;
     -fx-border-width: 0;
     -fx-label-padding: 0;
     /*-fx-background-radius: 0;*/
     -fx-border-radius: 0;
+}
 
+.TRACK2{
+    -fx-background-color: rgb(0, 51, 153,0.5);
+    -fx-fill-height: 10px;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-label-padding: 0;
+    /*-fx-background-radius: 0;*/
+    -fx-border-radius: 0;
 }
-.MAIN:pressed:hover {
-    -fx-background-color: #2c8580;
+
+.TRACK3{
+    -fx-background-color: rgb(255, 102, 102,0.5);
+    -fx-fill-height: 10px;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-label-padding: 0;
+    /*-fx-background-radius: 0;*/
+    -fx-border-radius: 0;
 }
-.MAIN:hover {
-    -fx-background-color: #2c8580;
+
+.TRACK4{
+    -fx-background-color: rgb(255, 204, 0,0.5);
+    -fx-fill-height: 10px;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-label-padding: 0;
+    /*-fx-background-radius: 0;*/
+    -fx-border-radius: 0;
 }
-.ACCOMPANIMENTS:pressed:hover {
+
+.TRACK0:pressed:hover {
+    -fx-background-color: rgb(102, 204, 0);
+}
+.TRACK0:hover {
+    -fx-background-color: rgb(102, 204, 0);
+}
+.TRACK1:pressed:hover {
     -fx-background-color: rgb(147, 143, 234);
 }
-.ACCOMPANIMENTS:hover {
+.TRACK1:hover {
     -fx-background-color: rgb(147, 143, 234);
+}
+.TRACK2:pressed:hover {
+    -fx-background-color: rgb(0, 51, 153);
+}
+.TRACK2:hover {
+    -fx-background-color: rgb(0, 51, 153);
+}
+.TRACK3:pressed:hover {
+    -fx-background-color: rgb(255, 102, 102);
+}
+.TRACK3:hover {
+    -fx-background-color: rgb(255, 102, 102);
+}
+.TRACK4:pressed:hover {
+    -fx-background-color: rgb(255, 204, 0);
+}
+.TRACK4:hover {
+    -fx-background-color: rgb(255, 204, 0);
 }
 
 

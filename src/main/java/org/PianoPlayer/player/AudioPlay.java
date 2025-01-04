@@ -22,8 +22,8 @@ public class AudioPlay {
         // 根据startTime升序排序，如果startTime相同，则根据endTime升序排序
         //notes.sort(Comparator.comparingLong(NoteBO::getStartTime).thenComparingLong(NoteBO::getEndTime));
 
-        // 获取当前时间戳作为参考点
-        long referenceTime = 0;
+        //延迟播放
+        long referenceTime = -3000;
 
         // 安排每个NoteBO的play和stop动作
         for (NoteBO note : notes) {
